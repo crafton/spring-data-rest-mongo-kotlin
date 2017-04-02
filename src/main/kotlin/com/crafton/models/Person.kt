@@ -18,7 +18,6 @@ data class Person(
         val age: Int,
         @Indexed(unique = true)
         val emailAddress: String,
-        @TextIndexed
         val addresses: List<Address>,
         val phoneNumbers: List<PhoneNumber>
 ) {

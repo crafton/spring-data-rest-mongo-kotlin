@@ -37,9 +37,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
-	compile ('com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7')
+	/*compile ('com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7')*/
+	compile('com.fasterxml.jackson.module:jackson-datatype-jsr310')
 	compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
-	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }

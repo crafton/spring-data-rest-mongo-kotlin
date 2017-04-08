@@ -1,7 +1,10 @@
 package com.crafton.repositories
 
-/**
- * Created by Crafton Williams on 2/04/2017.
- */
-interface TeamRepository {
+import com.crafton.models.Team
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.repository.query.Param
+
+
+interface TeamRepository : MongoRepository<Team, String> {
+    fun findByName(@Param("teamName") teamName: String): Team
 }

@@ -1,7 +1,10 @@
 package com.crafton.repositories
 
-/**
- * Created by Crafton Williams on 6/04/2017.
- */
-interface DepartmentRepository {
+import com.crafton.models.Department
+import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.repository.query.Param
+
+
+interface DepartmentRepository : MongoRepository<Department, String> {
+    fun findByName(@Param("name") name: String): Department
 }

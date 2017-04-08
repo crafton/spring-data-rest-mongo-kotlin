@@ -1,7 +1,12 @@
 package com.crafton.models
 
-/**
- * Created by Crafton Williams on 8/04/2017.
- */
-class Relative {
+import org.springframework.data.annotation.Id
+
+class Relative(
+        @Id
+        var id: String? = null,
+        var type: RelativeType? = null,
+        var owner: Person? = null,
+        var target: Person? = null
+) {
 }

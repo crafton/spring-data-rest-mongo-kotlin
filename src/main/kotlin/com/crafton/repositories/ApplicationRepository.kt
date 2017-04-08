@@ -1,7 +1,8 @@
 package com.crafton.repositories
 
-/**
- * Created by Crafton Williams on 4/04/2017.
- */
-interface ApplicationRepository {
+import com.crafton.models.Application
+import org.springframework.data.mongodb.repository.MongoRepository
+
+
+interface ApplicationRepository : MongoRepository<Application, String> {
 }

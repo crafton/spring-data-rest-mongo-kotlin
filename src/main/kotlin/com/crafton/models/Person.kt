@@ -1,25 +1,26 @@
 package com.crafton.models
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
-import org.springframework.data.mongodb.core.index.TextIndexed
+import org.springframework.data.mongodb.core.mapping.DBRef
 import org.springframework.data.mongodb.core.mapping.Document
+import java.util.*
 
 @Document
 data class Person(
         @Id
-        val id: String?,
-        val title: Title,
+        var id: String? = null,
+        var title: Title? = null,
         @Indexed
-        val firstName: String,
+        var firstName: String? = null,
         @Indexed
-        val surname: String,
-        val age: Int,
+        var surname: String? = null,
+        var dateOfBirth: Date? = null,
         @Indexed(unique = true)
-        val emailAddress: String,
-        val addresses: List<Address>,
-        val phoneNumbers: List<PhoneNumber>
+        var emailAddress: String? = null,
+        @DBRef
+        var addresses: MutableList<Address>? = null,
+        @DBRef
+        var phoneNumbers: MutableList<PhoneNumber>? = null
 ) {
-    override fun toString(): String = jacksonObjectMapper().writeValueAsString(this)
 }

@@ -1,12 +1,13 @@
 package com.crafton.models
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 data class PhoneNumber(
-        val type: ContactType,
-        val number: String
+        @Id
+        var id: String? = null,
+        var type: ContactType? = null,
+        var number: String? = null
 ) {
-    override fun toString(): String = jacksonObjectMapper().writeValueAsString(this)
 }

@@ -6,11 +6,11 @@ import org.springframework.data.mongodb.core.mapping.DBRef
 
 data class Application(
         @Id
-        val id: String? = null,
+        var id: String? = null,
         @Indexed(unique = true)
-        val name: String? = null,
-        val description: String? = null,
+        var name: String? = null,
+        var description: String? = null,
         @DBRef
-        val applicationContact: Team? = null
+        var applicationContact: Team? = null
 ) {
 }

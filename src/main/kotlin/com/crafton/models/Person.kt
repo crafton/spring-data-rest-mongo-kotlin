@@ -19,8 +19,8 @@ data class Person(
         @Indexed(unique = true)
         var emailAddress: String? = null,
         @DBRef
-        var addresses: MutableList<Address>? = null,
+        var addresses: Set<Address>? = null,
         @DBRef
-        var phoneNumbers: MutableList<PhoneNumber>? = null
+        var phoneNumbers: Set<PhoneNumber>? = null
 ) {
 }

@@ -10,6 +10,6 @@ interface PersonProjection {
     val surname: String
     val dateOfBirth: Date
     val emailAddress: String
-    val addresses: List<Address>
-    val phoneNumbers: List<PhoneNumber>
+    val addresses: Set<Address>
+    val phoneNumbers: Set<PhoneNumber>
 }

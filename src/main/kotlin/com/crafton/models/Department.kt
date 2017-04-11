@@ -13,6 +13,6 @@ data class Department(
         var name: String? = null,
         var description: String? = null,
         @DBRef
-        var teams: MutableList<Team>? = null
+        var teams: MutableSet<Team>? = null
 ) {
 }

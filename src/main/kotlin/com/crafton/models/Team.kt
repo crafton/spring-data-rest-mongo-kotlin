@@ -15,6 +15,6 @@ data class Team(
         @DBRef
         val teamLeader: Person? = null,
         @DBRef
-        val teamMembers: MutableList<Person>? = null
+        val teamMembers: MutableSet<Person>? = null
 ) {
 }
